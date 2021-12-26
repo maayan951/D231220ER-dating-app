@@ -51,3 +51,18 @@
 11. Adding a DbContext class
 12. Creating the Connection string.
 13. Creating the DB using EF Code first migrations
+14. Adding a new API controller
+15. Making our code Asynchronous
+16. Saving our code into Source control
+
+17. Section 1 Summary
+18. used doentet cli to create app, solution file gitignore file
+19. implemented basic API functionality, controller and endpoints
+20. installed entity framework, get data
+21. project structure
+22. configuration of the variables of our app
+23. source control
+
+next up:
+
+- setting our angular app to get the data from there
