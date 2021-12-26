@@ -55,13 +55,13 @@
 15. Making our code Asynchronous
 16. Saving our code into Source control
 
-17. Section 1 Summary
-18. used doentet cli to create app, solution file gitignore file
-19. implemented basic API functionality, controller and endpoints
-20. installed entity framework, get data
-21. project structure
-22. configuration of the variables of our app
-23. source control
+17. Section 1 Summary -
+   1. used doentet cli to create app, solution file gitignore file
+   2. implemented basic API functionality, controller and endpoints
+   3. installed entity framework, get data
+   4. project structure
+   5. configuration of the variables of our app
+   6. source control
 
 next up:
 
