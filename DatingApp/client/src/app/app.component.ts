@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +18,11 @@ export class AppComponent implements OnInit {
   }
 
   getUsers(){
-    this.http.get('https://localhost:5001/api/users').subscribe(res => {
+    this.http.get('https://localhost:5001/api/users').subscribe(
+    res => {
+      setTimeout(() => {
+        
+      },5000);
       this.users = res;
     },
     err => {
@@ -30,17 +33,17 @@ export class AppComponent implements OnInit {
     });
 
 
-      // next: (data) => {
-      //   this.users = data;
-      // },
-      // error: (err) => {
-      //   console.log(err);
-      // },
-      // complete: () => {
-      //   console.log('complete');
-      // }
-
-    })
+  //     {next: (data) => {
+  //       this.users = data;
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //     complete: () => {
+  //       console.log('complete');
+  //     }
+  // });
+    
   }
 
 }
