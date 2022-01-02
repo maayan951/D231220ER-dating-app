@@ -10,9 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
 
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
 
@@ -20,6 +18,7 @@ namespace API.Controllers
         {
             _context = context;
         }
+
 
 
         [HttpGet]
@@ -34,10 +33,6 @@ namespace API.Controllers
             var user = _context.Users.Find(id);
             return user;
         }
-
-
-
-
 
     }
 

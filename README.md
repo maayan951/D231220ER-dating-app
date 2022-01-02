@@ -18,6 +18,12 @@ requirements:
     4. privately message other users
 
 32. Safe storage of passwords
-
-
+33. Updating the user entity
+34. Creating an Account Controller with a register endpoint
+35. Using the debugger
+36. Using DTOs
+37. Adding validation
+38. Adding a login endpoint
+39. JSON web tokens
+40. Adding a token service
 
