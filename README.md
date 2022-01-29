@@ -1,20 +1,20 @@
-72. section 6 introductions:
-    error handling on the FE and the BE:
-    learning goals:
-    1. API Middleware - understanding
-    2. angular interceptors - intercept requests and responses
-    3. troubleshooting exceptions
+82. Section 8 Extending the API:
+    1. Entity Framework Relationships
+    2. Entity Framework Conventions (using conventions to let EF figure out the relationships) 
+    3. Seeding Data into the Database (the lazy approach)
+    4. the repository pattern (abstracting our work away from the dbcontext)
+    5. Using AutoMapper utility to map our models to our DTOs
 
-73. Creating an error controller for testing errors
-74. Handling server errors
-75. Exception handling middleware
-76. Testing errors in the client
-77. Adding an error interceptor
-78. Displaying the server validation errors
-79. Handling not found
-80. Adding a server error page
-81. Section 7 summary
-    1. implemented global error handling both in the frontend and backend
-    2. angular interceptors
-    3. troubleshoot exceptions 😉, create a helper page
-    4. create a helper page for the frontend
+83. Introduction
+84. Extending the user entity
+85. Adding a DateTime extension to calculate age
+86. Entity Framework relationships
+87. Generating seed data
+88. Seeding data part one
+89. Seeding data part two
+90. The repository pattern, why? 
+    1. encapsulation of the logic
+    2. DRY: reduces duplicate query logic
+    3. it helps with testing
+    4. we can change the ORM
+    
