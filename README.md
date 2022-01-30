@@ -1,4 +1,4 @@
-82. Section 8 Extending the API:
+82. Section 7 Extending the API:
     1. Entity Framework Relationships
     2. Entity Framework Conventions (using conventions to let EF figure out the relationships) 
     3. Seeding Data into the Database (the lazy approach)
@@ -17,4 +17,23 @@
     2. DRY: reduces duplicate query logic
     3. it helps with testing
     4. we can change the ORM
+
+91. Creating the repository
+92. Updating the users controller
+93. Using AutoMapper
+94. Configuring AutoMapper
+95. Using AutoMapper Queryable Extensions
+96. Section 7 Summary:
+    1. EF Relationship: understand the one to many relationship
+    2. EF Conventions: fully define relationship (photo being added it added to a user)
+    3. Seeding Data into the Database: the lazy way
+    4. The Repository Pattern: a bit more architecture (some will argue that's not necessary, 
+    but when it comes to testing it's a good idea)
+    5. Using AutoMapper:
+        * configure AutoMapper and using the queryable extensions to use projection from our 
+          repository into our DTOs, 
+        * so we don't handle the mapping in the controller, but in the repository
+        * as it's one of it's jobs too, to get the data from the DB and return it in a presentable 
+          format TO the controller
+
     
