@@ -15,3 +15,12 @@
 104. Adding animated buttons
 105. Using an interceptor to send the token
 106. Routing to the detailed page
+107. Styling the member detailed page
+108. Styling the member detailed page part two
+109. Adding a photo gallery
+110. Section 8 summary:
+    1. we now using TS more
+    2. added another interceptor, it will take care for sending the token for us
+    3. added a bit of styling using some css and bootstrap
+    4. used a 3rd party photo gallery
+    5. used route params

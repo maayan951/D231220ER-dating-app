@@ -18,6 +18,7 @@ import { CoreModule } from './modules/core.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { SharedModule } from './modules/shared.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
     ServerErrorComponent
    ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
