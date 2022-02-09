@@ -9,3 +9,8 @@
 
 112. Creating a member edit component
 113. Creating the edit template form
+114. Adding the update functionality
+115. Adding a CanDeactivate route guard
+116. Persisting the changes in the API
+117. Updating the user in the client app
+118. Adding loading indicators

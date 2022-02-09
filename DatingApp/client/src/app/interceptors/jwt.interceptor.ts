@@ -1,5 +1,5 @@
-import { AccountService } from './../services/account.service';
-import { User } from './../models/user';
+import { AccountService } from '../services/account.service';
+import { User } from '../models/user';
 import { Injectable } from '@angular/core';
 import {
   HttpRequest,
