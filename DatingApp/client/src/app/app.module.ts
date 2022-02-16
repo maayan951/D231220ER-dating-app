@@ -21,8 +21,8 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { SharedModule } from './modules/shared.module';
 import { MemberEditComponent } from './member-edit/member-edit.component';
+import { PhotoEditorComponent } from './member-edit/photo-editor/photo-editor.component';
 
-import { NgxSpinnerModule } from "ngx-spinner";
 
 
 @NgModule({
@@ -31,13 +31,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
     NavComponent,
     HomeComponent,
     RegisterComponent,
-
     ListsComponent,
     MessagesComponent,
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
    ],
   imports: [
     SharedModule,
@@ -45,7 +45,6 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule,
     FormsModule,
     CoreModule
   ],
