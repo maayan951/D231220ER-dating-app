@@ -1,7 +1,7 @@
-import { AccountService } from './../services/account.service';
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-register',
@@ -9,50 +9,45 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  model: any ={};
+  model: any = {};
   @Input() usersFromHomeComponent: any;
   @Output() cancelRegister = new EventEmitter<boolean>();
   registerForm: FormGroup;
 
   constructor(
     private accountService: AccountService,
-    private toastr: ToastrService
-    ) { }
+    private toastr: ToastrService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initializeForm();
   }
-
-  register(){
-
+  register() {
     // this.accountService.register(this.model).subscribe(
     //   (data) => {
     //     console.log(data);
     //     this.cancel();
     //   },
     //   error => {
-    //     this.toastr.error(error.error);
-    //     console.log(error);
+    //     this.toastr.error(error.error)
+    //     console.log(error)
     //   }
     // )
-
     console.log(this.registerForm.value);
 
   }
-
-  cancel(){
+  cancel() {
     this.cancelRegister.emit(false);
   }
 
-  initializeForm(){
+  initializeForm() {
     this.registerForm = new FormGroup({
       username: new FormControl("Hello", Validators.required),
       password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]),
-      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')] )
+      confirmPassword: new FormControl('', [Validators.required, this.matchValues('password')]),
     });
-    this.registerForm.get('password')?.valueChanges.subscribe(() =>{
+    this.registerForm.get('password')?.valueChanges.subscribe(() => {
       this.registerForm.get('confirmPassword')?.updateValueAndValidity();
-    })
+    });
   }
 
   matchValues(matchTo: string): ValidatorFn {
@@ -63,6 +58,5 @@ export class RegisterComponent implements OnInit {
       return controlValue === controlToMatchValue ? null : { isMatching: true };
     }
   }
-
 
 }
