@@ -12,3 +12,8 @@
 138. Reactive forms introduction
 139. Client side validation
 140. Adding custom validators
+141. Validation feedback
+142. Creating a reusable text input
+143. Expanding the register form
+144. Adding a reusable date input
+145. Updating the API register method
