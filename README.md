@@ -1,27 +1,23 @@
-137. Introduction:
-     1. use reactive forms:
-         * reactive form are build around observable streams.
-         * but forms inputs and values can be accessed synchronously.
-         * they are easy to test because they are detached from the html and act as separated objects.
-         * all the cool kids are using reactive forms.
-     2. use angualr validation for inputs.
-     3. implement custom validators.
-     4. implement resumable form controls (be a bit more DRY)
-     5. working with Date inputs.
-
-138. Reactive forms introduction
-139. Client side validation
-140. Adding custom validators
-141. Validation feedback
-142. Creating a reusable text input
-143. Expanding the register form
-144. Adding a reusable date input
-145. Updating the API register method
-146. Client side registration
-147. Section 11 summary
-     * used reactive forms
-     * use angular validation for inputs (never relay on client side validation alone, one can simply use postman)
-     * implementing custom validation
-     * implementing reusable form controls (these are massive time savers)
-     * working with date inputs
-    
+148. Introduction:
+     1. implement paging (pagination), sorting and filtering in the client and the api
+     2. deferred execution (doing it later) using IQueryable
+     3. using .net core Action Filters (on every received action in the api, we can do something)
+     4. adding a TimeAgo pipe to the client
+     5. implement caching in the client for paginated resources
+     * http://localhost:5001/api/users?pageNumber=1&pageSize=5
+     IQueryable<User> => var query _context.Users.Where(x => x.Gender == gender)
+                                                 .OrderBy(x => x.UserName)
+                                                 .Take(5)// pagination: take pageSize
+                                                 .Skip(0)// pagination: skip (pageNumber-1)
+                                                 .AsQueryable()
+     .ToList()
+     .ToListAsync()
+     .ToArrayAsync()
+     .ToDictionary() 
+     .Count()
+     1. get the total number of relevant items
+     2. get the items based on 1. and the pagination parameters
+     
+149. Adding a paged list class
+150. Adding helper classes for pagination
+151. Using the pagination classes
