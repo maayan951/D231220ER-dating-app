@@ -5,8 +5,8 @@ import { FileUploader, FileUploaderOptions } from 'ng2-file-upload';
 import { User } from 'src/app/models/user';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Photo } from 'src/app/models/Photo';
 import { MembersService } from 'src/app/services/members.service';
+import { Photo } from 'src/app/models/Photo';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class PhotoEditorComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private membersService: MembersService
+    private membersService:MembersService
     ) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user as User)
   }
@@ -51,8 +51,14 @@ export class PhotoEditorComponent implements OnInit {
 
     this.uploader.onSuccessItem = (item, response, status, headers) => {
       if (response) {
-        const photo = JSON.parse(response);
+        const photo:Photo = JSON.parse(response);
         this.member.photos.push(photo);
+
+        if (photo.isMain) {
+          this.user.photoUrl = photo.url;
+          this.member.photoUrl = photo.url;
+          this.accountService.setCurrentUser(this.user);
+        }
       }
     }
   }
@@ -61,7 +67,7 @@ export class PhotoEditorComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
-  setMainPhoto(photo: Photo){
+  setMainPhoto(photo: Photo) {
     this.membersService.setMainPhoto(photo.id).subscribe(() => {
       this.user.photoUrl = photo.url;
       this.accountService.setCurrentUser(this.user);
@@ -71,7 +77,7 @@ export class PhotoEditorComponent implements OnInit {
     })
   }
 
-  deletePhoto(photoId: number){
+  deletePhoto(photoId: number) {
     this.membersService.deletePhoto(photoId).subscribe(() => {
       this.member.photos = this.member.photos.filter(p => p.id !== photoId);
     });
