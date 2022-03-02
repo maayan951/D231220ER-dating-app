@@ -21,3 +21,7 @@
 149. Adding a paged list class
 150. Adding helper classes for pagination
 151. Using the pagination classes
+152. Setting up client pagination
+153. Using the angular bootstrap pagination component
+154. Adding filtering to the API
+155. Adding additional filters

@@ -39,10 +39,6 @@ export class NavComponent implements OnInit {
       .subscribe(response => {
         this.router.navigateByUrl('/members');
         console.log(response);
-      }, error => {
-        error.subscribe((x:any) => console.log(x));
-      }, () => {
-        console.log('Login complete');
       });
   }
 
