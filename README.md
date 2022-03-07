@@ -25,3 +25,8 @@
 153. Using the angular bootstrap pagination component
 154. Adding filtering to the API
 155. Adding additional filters
+156. Cleaning up the member service
+157. Adding filter buttons to the client
+158. Adding sorting functionality
+159. Adding an action filter
+160. Making the Last Active action filter more optimal

@@ -13,7 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class NavComponent implements OnInit {
   model: any = {};
-  // loggedIn: boolean = false;
   currentUser$: Observable<User | null>;
 
   constructor(
@@ -23,6 +22,7 @@ export class NavComponent implements OnInit {
     ) {
 
     this.currentUser$ = this.accountService.currentUser$;
+
   }
 
   ngOnInit(): void {
