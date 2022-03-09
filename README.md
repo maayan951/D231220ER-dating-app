@@ -30,3 +30,16 @@
 158. Adding sorting functionality
 159. Adding an action filter
 160. Making the Last Active action filter more optimal
+161. Sorting on the client
+162. Formatting dates
+163. Restoring the caching for members
+164. Restoring caching for member details
+165. Remembering the filters for a user in the service
+166. Section 12 summary
+    what we've learned in this section:
+     1. implemented filtering and sorting, in the API and client
+     2. implemented pagination int the API and client
+     3. deferred execution using IQueryable
+     4. using action filters (the ability to so something before or after an action is executed)
+     5. adding a TimeAgo pipe
+     6. implementing caching in the client for paginated resources
