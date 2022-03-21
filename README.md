@@ -8,3 +8,8 @@
             * and on the other side:      AppUser [-Has One-] -> LikedUser [-With Many-] -> LikedByUser
             * so this is what we'll be setting up in this section
      2. configure entities in DbContext
+
+168. Adding a likes entity
+169. Adding a likes repository
+170. Implementing the likes repository
+171. Controller methods for likes feature
