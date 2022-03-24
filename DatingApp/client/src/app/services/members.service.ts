@@ -9,7 +9,6 @@ import { User } from '../models/user';
 import { UserParams } from '../models/userParams';
 import { AccountService } from './account.service';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +18,7 @@ export class MembersService {
   memberCache = new Map<string, PaginatedResult<Member[]>>();
   user: User;
   userParams: UserParams;
+
 
   constructor(
     private http: HttpClient,
@@ -32,11 +32,26 @@ export class MembersService {
       });
   }
 
-
-  public get UserParams() : UserParams {
-    return this.userParams;
+  addLike(username: string) {
+    const url = `${this.baseUrl}likes/${username}`;
+    return this.http.post(url, {});
   }
-  public set UserParams(userParams : UserParams) {
+
+  getLikes(predicate: string, pageNumber: number, pageSize: number) {
+
+    let params = this.getPaginationParams(pageNumber, pageSize);
+    params = params.append('predicate', predicate);
+
+    return this.getPaginatedResult<Partial<Member>[]>(`${this.baseUrl}likes`, params)
+
+    // return this.http.get<Partial<Member>[]>(`${this.baseUrl}likes?predicate=${predicate}`);
+  }
+
+  public get UserParams(): UserParams {
+    return this.userParams
+  }
+
+  public set UserParams(userParams: UserParams) {
     this.userParams = userParams;
   }
 
@@ -50,7 +65,7 @@ export class MembersService {
     const response = this.memberCache.get(cacheKey);
     if (response) return of(response);
 
-    let params = this.getPaginationParams(userParams);
+    let params = this.getPaginationParams(userParams.pageNumber, userParams.pageSize);
     params = params.append('minAge', userParams.minAge.toString());
     params = params.append('maxAge', userParams.maxAge.toString());
     params = params.append('gender', userParams.gender);
@@ -88,7 +103,7 @@ export class MembersService {
     // }
     const members = [...this.memberCache.values()];
     const allMembers = members.reduce((arr: Member[], elem: PaginatedResult<Member[]>) => arr.concat(elem.result), []);
-    const foundMember = allMembers.find(m => m.username === username);
+    const foundMember = allMembers.find(m => m.username === username)
 
     if (foundMember) return of(foundMember);
 
@@ -112,7 +127,7 @@ export class MembersService {
     return this.http.delete(`${this.baseUrl}users/delete-photo/${photoId}`);
   }
 
-  private getPaginationParams({ pageNumber, pageSize }: UserParams) {
+  private getPaginationParams(pageNumber: number, pageSize: number) {
 
     let params = new HttpParams();
     params = params.append('pageNumber', pageNumber.toString());
