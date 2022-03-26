@@ -22,16 +22,12 @@ namespace API.Entities
         public string Country { get; set; }
         public ICollection<Photo> Photos { get; set; }
 
-      
-        /// <summary>
-        /// who liked this currently logged in user.
-        /// </summary> 
         public ICollection<UserLike> LikedByUsers { get; set; }
-
-        /// <summary>
-        /// who this user liked.
-        /// </summary> 
         public ICollection<UserLike> LikedUsers { get; set; }
+
+        public ICollection<Message> MessagesSent { get; set; } 
+        public ICollection<Message> MessagesReceived { get; set; } 
+        
 
     }
 }
