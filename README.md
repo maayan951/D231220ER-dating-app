@@ -11,3 +11,8 @@
 180. Setting up the automapper profiles
 181. Adding a message controller
 182. Getting the messages from the Repo
+183. Getting the message thread for 2 users
+184. Setting up the Angular app for messaging
+185. Designing the inbox
+186. Adding the message thread in the client
+187. Styling the message thread
